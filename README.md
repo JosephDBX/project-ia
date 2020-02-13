@@ -1,0 +1,16 @@
+____________________________________________________________
+Sistema de Análisis para Problemas de Regresión
+____________________________________________________________
+Universidad Nacional de Ingeniería
+Facultad de Ciencias y Sistemas
+Ingeniería de Sistemas
+____________________________________________________________
+Desarrolladores:
+Br. Steven Joseph Bustillo López
+Br. Joseph Javier Martínez Gonzalez
+____________________________________________________________
+run: conda update --all
+run: python main.py
+____________________________________________________________
+Desarrollado con Anaconda Python v2019.10
+____________________________________________________________
