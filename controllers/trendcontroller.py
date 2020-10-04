@@ -6,7 +6,7 @@ from PyQt5.QtWidgets import QMainWindow, QVBoxLayout, QMessageBox, QCheckBox, QD
 
 from sklearn.neural_network import MLPRegressor
 from sklearn.metrics import r2_score
-from sklearn.externals import joblib
+import joblib
 
 from models.dataframetablemodel import DataFrameTableModel
 

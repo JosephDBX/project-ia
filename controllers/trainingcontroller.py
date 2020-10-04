@@ -12,7 +12,7 @@ from matplotlib.pyplot import pause
 from sklearn.model_selection import train_test_split
 from sklearn.neural_network import MLPRegressor
 from sklearn.metrics import r2_score
-from sklearn.externals import joblib
+import joblib
 from sklearn import decomposition
 
 from math import ceil
