@@ -90,9 +90,12 @@ class TrainingController(QMainWindow, Ui_TrainingWindow):
     def onStart(self):
         if self.spinIterations.value() > 0 and self.spinLR.value() > 0 and self.spinAlpha.value() > 0:
             self.Xn = []
+            self.notXn = []
             for i, v in enumerate(self.listCheckBox):
                 if v.checkState():
                     self.Xn.append(v.text())
+                else:
+                    self.notXn.append(v.text())
             self.yn = self.comboOutput.currentText()
 
             if len(self.Xn) > 0:
@@ -108,6 +111,9 @@ class TrainingController(QMainWindow, Ui_TrainingWindow):
                 nColumns = ceil(len(self.Xn)/2)
 
                 X = self.data.drop(self.yn, 1)
+                for i, v in enumerate(self.notXn):
+                    X = X.drop(v, 1)
+                print(X)
                 y = self.data[self.yn]
                 X_train, X_test, y_train, y_test = train_test_split(X, y)
 

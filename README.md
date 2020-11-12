@@ -9,8 +9,10 @@ Desarrolladores:
 Br. Steven Joseph Bustillo López
 Br. Joseph Javier Martínez Gonzalez
 ____________________________________________________________
+run: conda install -c anaconda pymysql
+run: conda update conda
 run: conda update --all
 run: python main.py
 ____________________________________________________________
-Desarrollado con Anaconda Python v2019.10
+Desarrollado con Anaconda3-2020.07
 ____________________________________________________________
