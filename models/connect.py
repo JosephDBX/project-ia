@@ -1,4 +1,4 @@
-import pymysql
+import mysql.connector
 import pandas as pd
 from sqlalchemy import create_engine, Integer
 
@@ -13,7 +13,7 @@ class Connect():
         self._CHARSET='utf8mb4'
 
     def inputToDataBase(self, queryInput, queryGet, areMany = False):
-        connection = pymysql.connect(host=self._DB_HOST, user=self._DB_USER, password=self._DB_PASS, db=self._DATABASE, charset=self._CHARSET, cursorclass=pymysql.cursors.DictCursor)
+        connection = mysql.connector.connect(host=self._DB_HOST, user=self._DB_USER, password=self._DB_PASS, db=self._DATABASE, charset=self._CHARSET)
         try:
             with connection.cursor() as cursor:
                 cursor.execute(queryInput)
@@ -32,7 +32,7 @@ class Connect():
         return result
 
     def outputFromDataBase(self, queryGet, areMany = False):
-        connection = pymysql.connect(host=self._DB_HOST, user=self._DB_USER, password=self._DB_PASS, db=self._DATABASE, charset=self._CHARSET, cursorclass=pymysql.cursors.DictCursor)
+        connection = mysql.connector.connect(host=self._DB_HOST, user=self._DB_USER, password=self._DB_PASS, db=self._DATABASE, charset=self._CHARSET)
         try:
             with connection.cursor() as cursor:
                 cursor.execute(queryGet)
@@ -49,7 +49,7 @@ class Connect():
 
     def readDataFrame(self, queryGet):
         try:
-            connect_string = 'mysql+pymysql://{}:{}@{}:{}/{}?charset={}'.format(self._DB_USER, self._DB_PASS, self._DB_HOST, self._DB_PORT, self._DATABASE, self._CHARSET)
+            connect_string = 'mysql+mysqlconnector://{}:{}@{}:{}/{}?charset={}'.format(self._DB_USER, self._DB_PASS, self._DB_HOST, self._DB_PORT, self._DATABASE, self._CHARSET)
             engine = create_engine(connect_string)
             df = pd.read_sql_query(queryGet, engine)
         except:

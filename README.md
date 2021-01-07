@@ -1,18 +1,17 @@
 ____________________________________________________________
 Sistema de Análisis para Problemas de Regresión
 ____________________________________________________________
-Universidad Nacional de Ingeniería
-Facultad de Ciencias y Sistemas
-Ingeniería de Sistemas
+Universidad Nacional de Ingeniería - Facultad de Ciencias y Sistemas - Ingeniería de Sistemas
 ____________________________________________________________
-Desarrolladores:
-Br. Steven Joseph Bustillo López
-Br. Joseph Javier Martínez Gonzalez
+Desarrolladores: Br. Steven Joseph Bustillo López - Br. Joseph Javier Martínez Gonzalez
 ____________________________________________________________
-run: conda install -c anaconda pymysql
 run: conda update conda
+____________________________________________________________
 run: conda update --all
+____________________________________________________________
+run: conda install -c conda-forge mysql-connector-python
+____________________________________________________________
 run: python main.py
 ____________________________________________________________
-Desarrollado con Anaconda3-2020.07
+Desarrollado con Anaconda3-2020.11
 ____________________________________________________________
